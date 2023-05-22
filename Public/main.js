@@ -30,7 +30,7 @@ function submitHandler(e) {
     let bodyObj = {
         named: named.value,
         message: message.value
-    };
+    } 
 
     createMsg(bodyObj);
 
@@ -51,7 +51,7 @@ function createMessageCard(message) {
     messageCard.innerHTML = `
     <p class= "message-name">${message.name}</p>
     <div class="btns-container">
-        <p class="message-body">${message.body}</p>
+        <p class="message-body">${message.message}</p>
     </div>
     <button onclick="deleteMsg(${message.id})">delete</button>
     `
