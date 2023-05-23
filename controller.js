@@ -19,5 +19,15 @@ module.exports = {
 
             res.status(200).send(db)
         }
+    },
+
+    deleteMsg: (req, res) => {
+        let {id} = req.params
+
+        let index = db.findIndex(db => +db.id === +id)
+
+        db.splice(index, 1)
+
+        res.status(200).send(db)
     }
 }

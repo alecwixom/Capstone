@@ -7,11 +7,12 @@ app.use(express.json())
 app.use(express.static(__dirname + '/public'))
 
 
-const { getMessages, addMessage } = require('./controller.js')
+const { getMessages, addMessage, deleteMsg } = require('./controller.js')
 
 
 app.get('/api/messages', getMessages)
 app.post('/api/messages', addMessage)
+app.delete('/api/messages/:id', deleteMsg)
 
 
 app.listen(4001, () => {
