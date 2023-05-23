@@ -1,8 +1,8 @@
-let messages = require ('./db.json')
+let db = require ('./db.json')
 
 module.exports = {
     getMessages: (req, res) => {
-        res.status(200).send(messages)
+        res.status(200).send(db)
     },
 
     addMessage: (req, res) => {
@@ -15,9 +15,9 @@ module.exports = {
                 name,
                 message
             }
-            messages.push(newMessage)
+            db.push(newMessage)
 
-            res.statues(200).send(messages)
+            res.status(200).send(db)
         }
     }
 }

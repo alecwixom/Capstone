@@ -23,37 +23,37 @@ const createMsg = body => axios.post(baseURL, body).then(messagesCallback).catch
 function submitHandler(e) {
     e.preventDefault();
 
-    let named = document.querySelector('#name');
-    let message = document.querySelector('#msg');
+    let name = document.querySelector('#firstName')
+    let message = document.querySelector('#message_text')
 
-    if (named !== null && message !== null) {
+
     let bodyObj = {
-        named: named.value,
+        name: name.value,
         message: message.value
-    } 
+    }
 
     createMsg(bodyObj);
 
-    named.value = '';
+    name.value = '';
     message.value = '';
     }
-}
 
 
 
 
 
 
-function createMessageCard(message) {
+
+function createMessageCard(messager) {
     const messageCard = document.createElement('div')
     messageCard.classList.add('message-card')
 
     messageCard.innerHTML = `
-    <p class= "message-name">${message.name}</p>
+    <p class= "message-name">${messager.name}</p>
     <div class="btns-container">
-        <p class="message-body">${message.message}</p>
+        <p class="message-body">${messager.message}</p>
     </div>
-    <button onclick="deleteMsg(${message.id})">delete</button>
+    <button onclick="deleteMsg(${messager.id})">delete</button>
     `
     messageContainer.appendChild(messageCard)
 }
@@ -62,7 +62,7 @@ function createMessageCard(message) {
 
 function displayMessages(arr) {
     messageContainer.innerHTML = ``
-    for(let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         createMessageCard(arr[i])
     }
 }
