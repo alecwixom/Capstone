@@ -15,12 +15,7 @@ const errCallback = err => {
 };
 
 const getAllMessages = () => axios.get(baseURL).then(messagesCallback).catch(errCallback);
-const createMsg = body => axios.post(baseURL, body)
-    .then(() => {
-        return axios.get(baseURL)
-    })
-    .then(messagesCallback)
-    .catch(errCallback);
+const createMsg = body => axios.post(baseURL, body).then(messagesCallback).catch(errCallback);
 const deleteMsg = id => axios.delete(`${baseURL}/${id}`).then(messagesCallback).catch(errCallback);
 
 function submitHandler(e) {
