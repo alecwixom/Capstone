@@ -1,6 +1,7 @@
 
 const messageContainer = document.querySelector('#message-container')
 const form = document.querySelector('form')
+const article = document.querySelector('#aRules')
 
 const baseURL = 'http://localhost:4001/api/messages'
 
@@ -66,6 +67,13 @@ function displayMessages(arr) {
         createMessageCard(arr[i])
     }
 }
+
+function dismiss() {
+    article.classList.remove('#ap')
+    article.innerHTML = ``
+}
+
+article.addEventListener('submit', dismiss)
 
 form.addEventListener('submit', submitHandler)
 

@@ -72,3 +72,21 @@ button.delete-btn {
 button.delete-btn:hover {
     background-color: #e60000;
 }
+
+#footerTag {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+aside {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: left;
+    font-style: italic;
+    background-color: lightgray;
+}

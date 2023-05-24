@@ -8,15 +8,23 @@
     <title>The Chat Room</title>
 </head>
 <body>
-    <h1>Welcome to the Chat room!</h1>
-    <form>
-        <input id="firstName" name="first_Name" type="text" placeholder="Name:">
-        <input id="message_text" msg="messagetextBox" type="text" placeholder="Message:">
-
-        <button>Send message</button>
-    </form>
+    <header>
+        <h1>Welcome to the Chat room!</h1>
+    </header>
+    <section>
+        <form>
+            <input id="firstName" name="first_Name" type="text" placeholder="Name:">
+            <input id="message_text" msg="messagetextBox" type="text" placeholder="Message:">
+            <button>Send message</button>
+        </form>
+    </section>
     <section id="message-container"></section>
+    <aside id="aRules">
+        <p id="ap">Please Keep the chats clean and respectful to others.</p>
+        <button id="dismiss_btn" onclick="dismiss()">Dismiss</button>
+    </aside>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
+    <footer id="footerTag">Chat Room &copy;</footer>
 </body>
 </html>
