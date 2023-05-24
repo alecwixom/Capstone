@@ -53,7 +53,7 @@ function createMessageCard(messager) {
     <div class="btns-container">
         <p class="message-body">${messager.message}</p>
     </div>
-    <button onclick="deleteMsg(${messager.id})">delete</button>
+    <button onclick="deleteMsg(${messager.id})">DELETE</button>
     `
     messageContainer.appendChild(messageCard)
 }

@@ -9,7 +9,7 @@ module.exports = {
         let {name, message} = req.body
 
         if (!name || !message) {
-            res.send(400).send('New messages MUST have a name and a message')
+            res.status(400).send('New messages MUST have a name and a message')
         } else {
             let newMessage = {
                 name,

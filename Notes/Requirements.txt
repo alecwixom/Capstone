@@ -1,0 +1,20 @@
+
+PLANNING:
+Project includes a list of MVP features
+
+MVP:
+App has at least 3 main features
+Front end makes a request to the server and handles the response
+Front end is interactive
+App has custom styling
+
+FRONT END:
+App has at least 5 semantic tags
+App includes 1 view
+
+SERVER:
+App includes a GET endpoint and hander function
+App includes a POST endpoint and handler function
+
+PRESENTATION:
+Discusses project purpose and demonstrates MVP
