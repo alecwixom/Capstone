@@ -5,7 +5,7 @@ const port = 4001;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/Public'))
 
 const { getMessages, addMessage, deleteMsg } = require('./controller.js');
 
