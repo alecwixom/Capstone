@@ -3,6 +3,7 @@ const form = document.querySelector('form');
 const article = document.querySelector('#aRules');
 
 const baseURL = 'http://54.153.74.137:4001/api/messages';
+// const baseURL = 'http://localhost:4001/api/messages';
 
 const messagesCallback = ({ data: messages }) => displayMessages(messages);
 const errCallback = err => {
