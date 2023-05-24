@@ -1,4 +1,4 @@
-let db = require('./db.json');
+let db = require('.db.json');
 
 module.exports = {
     getMessages: (req, res) => {
