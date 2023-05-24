@@ -69,11 +69,8 @@ function displayMessages(arr) {
 }
 
 function dismiss() {
-    article.classList.remove('#ap')
     article.innerHTML = ``
 }
-
-article.addEventListener('submit', dismiss)
 
 form.addEventListener('submit', submitHandler)
 
