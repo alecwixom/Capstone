@@ -43,7 +43,7 @@ function createMessageCard(messager) {
     const messageCard = document.createElement('div')
     messageCard.classList.add('message-card')
 
-    const messageTime = new Date(messager.timestamp);
+    const messageTime = new Date(messager.timestamp)
 
     const currentTime = new Date()
     const timeDiff = Math.abs(currentTime - messageTime)
@@ -54,13 +54,15 @@ function createMessageCard(messager) {
     <p class="message-name">${messager.name}</p>
     <div class="btns-container">
         <p class="message-body">${messager.message}</p>
-        <p class="message-time">${timeString}</p>
+        <p class="message-time">Sent: ${messageTime.toLocaleString()}</p>
+        <p class="message-elapsed-time">${timeString}</p>
     </div>
     <button onclick="deleteMsg(${messager.id})">DELETE</button>
     `;
 
     messageContainer.appendChild(messageCard)
 }
+
 
 
 function displayMessages(arr) {
