@@ -30,7 +30,8 @@ function submitHandler(e) {
 
     let bodyObj = {
         name: name,
-        message: message
+        message: message,
+        timestamp: new Date().toISOString()
     }
 
     createMsg(bodyObj)
