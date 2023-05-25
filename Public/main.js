@@ -66,6 +66,12 @@ function dismiss() {
     article.innerHTML = '';
 }
 
+function refreshMessages() {
+    getAllMessages
+}
+
+setInterval(refreshMessages, 5000)
+
 form.addEventListener('submit', submitHandler);
 
 getAllMessages();
