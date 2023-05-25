@@ -15,7 +15,7 @@ app.post('/api/messages', addMessage);
 app.delete('/api/messages/:id', deleteMsg);
 
 if (db.length === db.length + 1) {
-    getMessages()
+    app.get('/api/messages', getMessages)
 }
 
 app.listen(port, () => {
