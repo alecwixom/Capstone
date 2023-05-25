@@ -14,7 +14,8 @@ module.exports = {
             let newMessage = {
                 id: db.length + 1,
                 name: name,
-                message: message
+                message: message,
+                timestamp: timestamp
             };
             db.push(newMessage)
 
