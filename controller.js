@@ -6,9 +6,9 @@ module.exports = {
     },
 
     addMessage: (req, res) => {
-        let { name, message } = req.body
+        let { name, message, timestamp } = req.body
 
-        if (!name || !message) {
+        if (!name || !message || !timestamp) {
             res.status(400).send('New messages MUST have a name and a message')
         } else {
             let newMessage = {
