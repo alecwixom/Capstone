@@ -1,38 +1,38 @@
-let db = require('./db.json');
+let db = require('./db.json')
 
 module.exports = {
     getMessages: (req, res) => {
-        res.status(200).send(db);
+        res.status(200).send(db)
     },
 
     addMessage: (req, res) => {
-        let { name, message } = req.body;
+        let { name, message } = req.body
 
         if (!name || !message) {
-            res.status(400).send('New messages MUST have a name and a message');
+            res.status(400).send('New messages MUST have a name and a message')
         } else {
             let newMessage = {
                 id: db.length + 1,
                 name: name,
                 message: message
             };
-            db.push(newMessage);
+            db.push(newMessage)
 
-            res.status(200).send(db);
+            res.status(200).send(db)
         }
     },
 
     deleteMsg: (req, res) => {
-        let { id } = req.params;
+        let { id } = req.params
 
-        let index = db.findIndex(msg => +msg.id === +id);
+        let index = db.findIndex(msg => +msg.id === +id)
 
         if (index === -1) {
-            res.status(404).send('Message not found');
+            res.status(404).send('Message not found')
         } else {
-            db.splice(index, 1);
+            db.splice(index, 1)
 
-            res.status(200).send(db);
+            res.status(200).send(db)
         }
     }
-};
+}
