@@ -2,7 +2,6 @@ const messageContainer = document.querySelector('#message-container');
 const form = document.querySelector('form');
 const article = document.querySelector('#aRules');
 
-
 const baseURL = 'http://54.153.74.137:4001/api/messages';
 // const baseURL = 'http://localhost:4001/api/messages';
 
@@ -66,12 +65,11 @@ function dismiss() {
     article.innerHTML = '';
 }
 
-function refreshMessages() {
-    getAllMessages();
-}
-
-setInterval(refreshMessages, 5000)
-
 form.addEventListener('submit', submitHandler);
+
+const socket = io();
+socket.on('newMessage', () => {
+    getAllMessages();
+});
 
 getAllMessages();
