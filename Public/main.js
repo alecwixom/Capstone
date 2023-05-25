@@ -67,7 +67,7 @@ function dismiss() {
 }
 
 function refreshMessages() {
-    getAllMessages
+    getAllMessages();
 }
 
 setInterval(refreshMessages, 5000)
