@@ -2,8 +2,8 @@ const messageContainer = document.querySelector('#message-container')
 const form = document.querySelector('form')
 const article = document.querySelector('#aRules')
 
-// const baseURL = 'http://54.153.74.137:4001/api/messages'
-const baseURL = 'http://localhost:4001/api/messages'
+const baseURL = 'http://54.153.74.137:4001/api/messages'
+// const baseURL = 'http://localhost:4001/api/messages'
 
 const messagesCallback = ({ data: messages }) => displayMessages(messages)
 const errCallback = err => {
@@ -23,6 +23,7 @@ function submitHandler(e) {
 
     let name = document.querySelector('#firstName').value
     let message = document.querySelector('#message_text').value
+    let timestamp = new Date().toLocaleDateString()
 
     if (!name || !message) {
         return;
@@ -31,6 +32,7 @@ function submitHandler(e) {
     let bodyObj = {
         name: name,
         message: message,
+        timestamp: timestamp
     }
 
     createMsg(bodyObj)
@@ -45,6 +47,7 @@ function createMessageCard(messager) {
 
     messageCard.innerHTML = `
     <p class="message-name">${messager.name}</p>
+    <p class="message-time">${messager.timestamp}</p>
     <div class="btns-container">
         <p class="message-body">${messager.message}</p>
     </div>

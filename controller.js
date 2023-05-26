@@ -6,15 +6,22 @@ module.exports = {
     },
 
     addMessage: (req, res) => {
+
         let { name, message } = req.body
 
         if (!name || !message) {
             res.status(400).send('New messages MUST have a name and a message')
         } else {
+            let currentTime = new Date()
+            let hours = currentTime.getHours()
+            let minutes = currentTime.getMinutes()
+            let seconds = currentTime.getSeconds()
+            let timestamp = `${hours}:${minutes}:${seconds}`
             let newMessage = {
                 id: db.length + 1,
                 name: name,
                 message: message,
+                timestamp: timestamp
             };
             db.push(newMessage)
 
