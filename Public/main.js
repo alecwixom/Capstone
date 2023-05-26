@@ -2,8 +2,8 @@ const messageContainer = document.querySelector('#message-container')
 const form = document.querySelector('form')
 const article = document.querySelector('#aRules')
 
-const baseURL = 'http://54.153.74.137:4001/api/messages'
-// const baseURL = 'http://localhost:4001/api/messages'
+// const baseURL = 'http://54.153.74.137:4001/api/messages'
+const baseURL = 'http://localhost:4001/api/messages'
 
 const messagesCallback = ({ data: messages }) => displayMessages(messages)
 const errCallback = err => {
@@ -31,7 +31,6 @@ function submitHandler(e) {
     let bodyObj = {
         name: name,
         message: message,
-        timestamp: new Date().toISOString()
     }
 
     createMsg(bodyObj)
@@ -44,19 +43,10 @@ function createMessageCard(messager) {
     const messageCard = document.createElement('div')
     messageCard.classList.add('message-card')
 
-    const messageTime = new Date(messager.timestamp)
-
-    const currentTime = new Date()
-    const timeDiff = Math.abs(currentTime - messageTime)
-    const minutes = Math.floor(timeDiff / (1000 * 60))
-    const timeString = minutes > 0 ? `${minutes} minutes ago` : `just now`
-
     messageCard.innerHTML = `
     <p class="message-name">${messager.name}</p>
     <div class="btns-container">
         <p class="message-body">${messager.message}</p>
-        <p class="message-time">Sent: ${messageTime.toLocaleString()}</p>
-        <p class="message-elapsed-time">${timeString}</p>
     </div>
     <button onclick="deleteMsg(${messager.id})">DELETE</button>
     `;

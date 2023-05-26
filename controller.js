@@ -6,16 +6,15 @@ module.exports = {
     },
 
     addMessage: (req, res) => {
-        let { name, message, timestamp } = req.body
+        let { name, message } = req.body
 
-        if (!name || !message || !timestamp) {
+        if (!name || !message) {
             res.status(400).send('New messages MUST have a name and a message')
         } else {
             let newMessage = {
                 id: db.length + 1,
                 name: name,
                 message: message,
-                timestamp: timestamp
             };
             db.push(newMessage)
 
