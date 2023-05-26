@@ -4,6 +4,7 @@ const article = document.querySelector('#aRules')
 
 const baseURL = 'http://54.183.224.121/api/messages'
 // const baseURL = 'http://localhost:4001/api/messages'
+//notes for the main to update in the git hub repo
 
 const messagesCallback = ({ data: messages }) => displayMessages(messages)
 const errCallback = err => {
