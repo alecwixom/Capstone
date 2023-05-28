@@ -16,7 +16,10 @@ app.post('/api/messages', (req, res) => {
     addMessage(req, res)
     io.emit('newMessage')
 })
-app.delete('/api/messages/:id', deleteMsg)
+app.delete('/api/messages/:id',(req, res) => {
+    deleteMsg(req, res)
+    io.emit('newMessage')
+})
 
 io.on('connection', (socket) => {
     console.log('A user connected')
