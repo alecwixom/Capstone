@@ -1,8 +1,7 @@
 const messageContainer = document.querySelector('#message-container')
 const form = document.querySelector('form')
 const article = document.querySelector('#aRules')
-
-const baseURL = 'http://18.144.10.55:4001/api/messages'
+const baseURL = 'http://54.67.45.204:4001/api/messages'
 // const baseURL = 'http://localhost:4001/api/messages'
 
 const messagesCallback = ({ data: messages }) => displayMessages(messages)
@@ -13,7 +12,6 @@ const errCallback = err => {
         console.log(err)
     }
 }
-
 const getAllMessages = () => axios.get(baseURL).then(messagesCallback).catch(errCallback)
 const createMsg = body => axios.post(baseURL, body).then(messagesCallback).catch(errCallback)
 const deleteMsg = id => axios.delete(`${baseURL}/${id}`).then(messagesCallback).catch(errCallback)
