@@ -16,7 +16,15 @@ module.exports = {
             let hours = currentTime.getHours()
             let minutes = currentTime.getMinutes()
             let seconds = currentTime.getSeconds()
+            if (seconds < 10) {
+                seconds = '0' + seconds
+            }
             let timestamp = `${hours}:${minutes}:${seconds}`
+            if (hours > 12) {
+                timestamp = timestamp + " pm"
+            } else {
+                timestamp = timestamp + " am"
+            }
             let newMessage = {
                 id: db.length + 1,
                 name: name,
