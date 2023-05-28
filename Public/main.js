@@ -2,8 +2,8 @@ const messageContainer = document.querySelector('#message-container')
 const form = document.querySelector('form')
 const article = document.querySelector('#aRules')
 
-// const baseURL = 'http://54.183.224.121:4001/api/messages'
-const baseURL = 'http://localhost:4001/api/messages'
+const baseURL = 'http://18.144.10.55:4001/api/messages'
+// const baseURL = 'http://localhost:4001/api/messages'
 
 const messagesCallback = ({ data: messages }) => displayMessages(messages)
 const errCallback = err => {
@@ -51,7 +51,7 @@ function createMessageCard(messager) {
     <div class="btns-container">
         <p class="message-body">${messager.message}</p>
     </div>
-    <button onclick="deleteMsg(${messager.id})">DELETE</button>
+    <button id="deleteBtn" onclick="deleteMsg(${messager.id})">DELETE</button>
     `;
 
     messageContainer.appendChild(messageCard)
