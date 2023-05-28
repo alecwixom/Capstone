@@ -2,12 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: lightgray;
+    background: url(Background.jpg);
+    background-size: cover;
 }
 
 h1 {
     text-align: center;
     margin-top: 30px;
+    color: white;
 }
 
 form {
@@ -43,7 +45,7 @@ button:hover {
 }
 
 .message-card {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2d0;
     width: 300px;
     padding: 10px;
     margin: 10px;
@@ -78,8 +80,8 @@ button.delete-btn:hover {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #f2f2f2;
-    padding: 10px;
+    background-color: rgba(211, 211, 211, 0.5);
+    padding: 5px;
 }
 
 aside {
@@ -88,5 +90,5 @@ aside {
     margin-left: 15px;
     float: left;
     font-style: italic;
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.473);
 }
