@@ -26,3 +26,4 @@ copy your public ip.
 Paste the public ip on line 4 of main.js replacing localhost:4001-http://localhost:4001/api/messages
 On the AWS, you will need to also run "npm i" or specify what download it needs by running
 npm i "specified"
+[label](README.md)
