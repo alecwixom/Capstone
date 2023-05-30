@@ -4,6 +4,7 @@ AnonymoChat is a fullstack web application that sends and recieves messages
 anonymously! This was made by Alec Wixom, for the purpose of having a temporary
 saved database of messages between users. All data is saved to the db.json or /api/messages
 as well as the database is cleared upon restarting the website or using the delete function.
+This was done to ensure privacy of the chatters.
 
 DOWNLOADING:
 1: go to https://github.com/alecwixom/CapstoneFirstHalfOfDevMountain
