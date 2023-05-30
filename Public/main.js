@@ -1,8 +1,7 @@
 const messageContainer = document.querySelector('#message-container')
 const form = document.querySelector('form')
 const article = document.querySelector('#aRules')
-const baseURL = 'http://54.67.45.204:4001/api/messages'
-// const baseURL = 'http://localhost:4001/api/messages'
+const baseURL = 'http://localhost:4001/api/messages'
 
 const messagesCallback = ({ data: messages }) => displayMessages(messages)
 const errCallback = err => {
@@ -24,7 +23,7 @@ function submitHandler(e) {
     let timestamp = new Date().toLocaleDateString()
 
     if (!name || !message) {
-        return;
+        return alert('New messages MUST have a NAME and a MESSAGE');
     }
 
     let bodyObj = {

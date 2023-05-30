@@ -10,10 +10,10 @@ module.exports = {
         let { name, message } = req.body
 
         if (!name || !message) {
-            res.status(400).send('New messages MUST have a name and a message')
+            res.status(400).send('New messages MUST have a name and a message');
         } else {
             let currentTime = new Date()
-            let hours = currentTime.getHours() - 6
+            let hours = currentTime.getHours()
             if (hours > 12) {
                 hours = hours - 12
             }
