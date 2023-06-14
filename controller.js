@@ -25,7 +25,7 @@ module.exports = {
             if (seconds < 10) {
                 seconds = '0' + seconds
             }
-            if (hours + 12 > 12) {
+            if (hours > 12) {
                 seconds = seconds + " pm"
             } else {
                 seconds = seconds + " am"
