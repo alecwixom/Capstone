@@ -14,9 +14,6 @@ module.exports = {
         } else {
             let currentTime = new Date()
             let hours = currentTime.getHours() -6
-            if (hours > 12) {
-                hours = hours - 12
-            }
             let minutes = currentTime.getMinutes()
             if (minutes < 10) {
                 minutes = '0' + minutes
@@ -26,6 +23,7 @@ module.exports = {
                 seconds = '0' + seconds
             }
             if (hours > 12) {
+                hours = hours - 12
                 seconds = seconds + " pm"
             } else {
                 seconds = seconds + " am"
