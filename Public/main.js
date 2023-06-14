@@ -1,7 +1,8 @@
 const messageContainer = document.querySelector('#message-container')
 const form = document.querySelector('form')
 const article = document.querySelector('#aRules')
-const baseURL = 'http://localhost:4001/api/messages'
+const baseURL = 'http://13.52.218.203/api/messages'
+// const baseURL = 'http://localhost:4001/api/messages'
 
 const messagesCallback = ({ data: messages }) => displayMessages(messages)
 const errCallback = err => {
