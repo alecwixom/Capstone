@@ -13,7 +13,7 @@ module.exports = {
             res.status(400).send('New messages MUST have a name and a message');
         } else {
             let currentTime = new Date()
-            let hours = currentTime.getHours()// -6
+            let hours = currentTime.getHours() -6
             if (hours > 12) {
                 hours = hours - 12
             }
